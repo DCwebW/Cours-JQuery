@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Essai</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="CoursjQuery.js"></script>
+    <style>
+        .test {
+            background-color: brown;
+            color: beige;
+            font-size: 1.5em
+        }
+
+        #output {
+            background-color: blueviolet;
+            color: blue;
+            font-size: 3em;
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JQUERY</h1>
+    <div id="para1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eum excepturi eveniet maiores
+            adipisci, quas,
+            nobis molestiae unde ducimus dolore aliquam tempora fugit placeat corrupti repellendus non? Commodi, dolorum
+            suscipit.</p>
+    </div>
+    <div id="one">
+        <p>DIV ID ONE Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint vitae alias molestias
+            necessitatibus itaque
+            quibusdam, veritatis sit expedita minima nostrum ipsum, ex enim harum animi numquam nobis dignissimos
+            reiciendis quisquam?</p>
+    </div>
+    <div id="two">
+        <p class="abc">
+            DIV ID TWO Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos suscipit ullam quod
+            voluptatem
+            consequatur laudantium maiores sint atque laboriosam, nemo omnis odit dolores, numquam harum doloribus.
+            Animi possimus officia nulla.
+        </p>
+    </div>
+    <!-- div#three>ul>li#list${list $}*5 = C'est une syntaxe en Emmet pour coder plus rapidement en html-->
+    <div id="three">
+        <ul>
+            <li id="list1">list1</li>
+            <li id="list2">list2</li>
+            <li id="list3">list3</li>
+            <li id="list4">list4</li>
+            <li id="list5">list5</li>
+        </ul>
+    </div>
+    <p>
+        <a href="https://developers.google.com/speed/libraries?hl=fr#jquery" id="link1">TEST PAGE</a>
+    </p>
+    <div id="output">OUTPUT</div>
+    <!-- button#btn${btn $}*5 -->
+    <button id="btn1">btn 1</button>
+    <button id="btn2">btn 2</button>
+    <button id="btn3">btn 3</button>
+    <button id="btn4">btn 4</button>
+    <button id="btn5">btn 5</button>
+    <script>
+        // $(document).ready(function(){
+        //     $("#output").html("Welccome to JQUERY");
+        // })
+        $(function () {
+            // $("#output").html("Using JQuery")
+            // $("#one").click(function () {
+            //     $("#para1").hide();
+            // })
+            // $("h1").click(function(){
+            //     console.log("h1 clicked");
+            //     $("#three ul li#list3").addClass("test")
+            //     $
+            $("a#link1").click(function (e) {
+                e.preventDefault();
+                $(this).html("Page under construction");
+                // le "this" permet de réutiliser un élément déja sélectionné , ici il s'agit du link 1
+            })
+            // $("#list1").click(function () {
+            //     $(this).html("List 1 selected");
+            // })
+            // // avec ce code en cliquant sur liste 1 , on affiche "List 1 selected" à la place de liste 1
+            // $("#list2").dblclick(function () {
+            //     $(this).html("List 2 selected");
+            // })
+
+            // $("#list3").mouseenter(function () {
+            //     $(this).html("mouse entered");
+            // })
+            // $("#list4").mouseleave(function () {
+            //     $(this).html("mouse left").addClass("test");
+            // })
+            // $("#list5").hover(function () {
+            //     $(this).html("enter");
+            // }, function () {
+            //     $(this).html("leave");
+            //     })
+
+            // })
+            $("li").on({
+                mouseenter: function () {
+                    $(this).css({ color: "green", "font-weight": "bold" });
+                },
+                mouseleave: function () {
+                    $(this).css({ color: "orange" });
+                },
+                click: function () {
+                    $(this).hide();
+
+                }
+
+            })
+            $("#btn1").click(function () {
+                $("#output").fadeTo(4000, 0.2).fadeTo(4000,1);
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
